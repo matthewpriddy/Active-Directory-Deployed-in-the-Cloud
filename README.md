@@ -2,16 +2,15 @@
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
+<h1>Active Directory Deployed in the Cloud (Azure)</h1>
 This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
 
+If you would like to learn how to create Virtual Machines using Microsoft Azure, left click the link ["Creating Resource Groups and Deploying Virtual Machines"](https://github.com/matthewpriddy/azure-vm-resource).
 
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com)
 
 <h2>Environments and Technologies Used</h2>
 
+- Desktop PC or MAC
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
 - Active Directory Domain Services
@@ -24,10 +23,16 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Deploy two Virtual Machines (VM) within Microsoft Azure with the following specifications:
+  - Domain Controller VM (DCVM) (Windows Server 2022) -- Private IP Address set to STATIC
+  - Client VM (Windows 10) -- sharing the same Resource Group and Vnet as the DCVM
+- Ensure Connectivity between the Client VM and the DCVM from your Desktop
+  - Enable Inbound Rules for "Core Networking Diagnostics" within DCVM's Firewall
+- Install Active Directory Domain Services within DCVM (promote DCVM to a Domain Controller immediately following install)
+- Create an Admin and Standard User Account in Active Directory (via DCVM)
+- Join the Client VM to the Domain
+- With the Admin User Account login, setup the Client VM for non-administrative users to gain access
+- While creating multiple non-admin Users with the Domain Controller, attempt to log into Client VM as one of those newly created users
 
 <h2>Deployment and Configuration Steps</h2>
 
