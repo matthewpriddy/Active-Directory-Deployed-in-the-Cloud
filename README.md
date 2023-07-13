@@ -46,7 +46,7 @@ Lets start with creating a **Resource Group** by using the Azure Search bar at t
 </p>
 <br />
 
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Resource%202nd.png?raw=true)
+(https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Resource%202nd.png?raw=true)
 </p>
 <p>
   
