@@ -152,7 +152,20 @@ Under Private IP Address settings, change the Allocation to Static, then select 
 
 - - - -
 
+We need to ensure there is connectivity between the Client VM and the Domain Controller VM.
 
+To start, let's acquire the necessary login credentials for each VM.
+
+This includes the DCVM and Client VM's: Username, Password, Public IP Address, and the DCVM's Private IP Address.
+
+To access the Public IP Address and the private IP Address, goto Microsoft Azure and access the Virtual Machine's Overview page (search virtual machine at the top, then open both VMs.
+
+insert pics
+
+We only need the Private IP Address for the Domain Controller, not to login, but to help the Client VM ping the DCVM.
+
+Utilizing the credentials you have for each VM, remotely login to each VM.
+With PC, use Remote Desktop Connection to login (which you can find searching "remote" in the Start menu).
 
 
 
