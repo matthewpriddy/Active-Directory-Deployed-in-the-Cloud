@@ -46,7 +46,8 @@ Lets start with creating a **Resource Group** by using the Azure Search bar at t
 </p>
 <br />
 
-(https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Resource%202nd.png?raw=true)
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/fd5ea2d1-2561-4589-92c7-deec13f07619)
+
 </p>
 <p>
   
@@ -55,7 +56,9 @@ Lets start with creating a **Resource Group** by using the Azure Search bar at t
 </p>
 <br />
 
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Resource%203rd.png?raw=true)
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/0e1a978c-28aa-4192-ab68-c7097550a6ce)
+
+
 </p>
 <p>
   
@@ -64,13 +67,14 @@ Lets start with creating a **Resource Group** by using the Azure Search bar at t
 </p>
 <br />
 
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Resource%204th.png?raw=true)
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/e7176d1e-5791-4b83-964d-cb5ee94f33ed)
+
 </p>
 <p>
 
 Now that we have our **Resource group** created, let's move on to creating the Virtual Machine that will be our Domain Controller. From the Microsoft Home page, using the search bar, search Virtual Machine.
 
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Virtual%20Machine%201st.png?raw=true)
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/a41a713c-8e1a-4422-a39b-10fb49996a87)
 
 
 
@@ -98,15 +102,13 @@ It should go through a validation process for a few seconds, then you can select
 
 We don't need to worry about creating a Virtual Network or a sub-net, as it will automatically have been created at this point. 
 
-You will see why thats important shortly, but for now, we will move on to the next step.
+You will see why that is important shortly, but for now, we will move on to the next step.
 
 - - - -
 
-Lets create a proper Client VM for this tutorial:
+Let's create a proper Client VM for this tutorial by creating a Virtual Machine with the following:
 
-![Client 1 VM Setup - Part 1](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/4e0f3af8-b3b2-4d03-966a-1cb16fac92ee)
 
-On the create a Virtual Machine page, ensure the following:
 
 ► Use the same created Resource Group as the DCVM [for my example, it is AD-Lab]
 
@@ -120,6 +122,8 @@ On the create a Virtual Machine page, ensure the following:
 
 ► Create a Username and password of your choosing (keep it handy, saved or written somewhere safe).
 
+![Client 1 VM Setup - Part 1](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/4e0f3af8-b3b2-4d03-966a-1cb16fac92ee)
+
 Click the box near the bottom of the page, select next until you encounter the Networking tab. 
 
 Once there, look at the Virtual Network to ensure the Client VM has the same V-Net as the Domain Controller VM. In this example, it's AD-Lab-vnet.
@@ -132,7 +136,7 @@ Now select Review and Create, then Create again.
 
 We need to adjust the Private IP Address setting on the DCVM. 
 
-From the Azure hompage, search "virtual machines", find the domain controller VM from the results of the search, and left click the DCVM.
+From the Azure homepage, search "virtual machines", find the domain controller VM from the results of the search, and left-click the DCVM.
 
 From the DCVM screen, on the left side, you will notice many selections to choose from. Select Networking.
 
@@ -142,11 +146,11 @@ Now, where it says Network Interface in the center of the screen, click on the b
 
 From the Network Interface screen, on the left side, find the "IP Configurations" selection. Select it.
 
-Note the Private IP address status shown on the lower left of the screen, how it describes the Private IP Address as "dynamic". We need to change that. To the left of the Private IP Address, left click on where it says "ipconfig1".
+Note the Private IP address status shown on the lower left of the screen, and how it describes the Private IP Address as "dynamic". We need to change that. To the left of the Private IP Address, left-click on where it says "ipconfig1".
 
 ![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/711fe19d-bf37-44d8-8cd1-a8c1ffba39be)
 
-Under Private IP Address settings, change the Allocation to Static, then select save. This is to ensure that the IP address doesn't change.
+Under Private IP Address settings, change the Allocation to Static, then select Save. This is to ensure that the IP address doesn't change.
 
 ![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/d9f2158c-9a18-4760-82ea-39277654f79c)
 
@@ -156,16 +160,28 @@ We need to ensure there is connectivity between the Client VM and the Domain Con
 
 To start, let's acquire the necessary login credentials for each VM.
 
-This includes the DCVM and Client VM's: Username, Password, Public IP Address, and the DCVM's Private IP Address.
+This includes the DCVM and Client VM's: Username, Password, Public IP Address, and DCVM's Private IP Address.
 
-To access the Public IP Address and the private IP Address, goto Microsoft Azure and access the Virtual Machine's Overview page (search virtual machine at the top, then open both VMs.
+To access the Public IP Address and the private IP Address, go to Microsoft Azure and access the Virtual Machine's Overview page (search virtual machine at the top, then open both VMs).
 
-insert pics
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/c05712cd-7386-4701-bee4-714de9620672)
 
-We only need the Private IP Address for the Domain Controller, not to login, but to help the Client VM ping the DCVM.
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/57947d99-9cc7-42f7-b6d4-e767022bce2d)
 
-Utilizing the credentials you have for each VM, remotely login to each VM.
-With PC, use Remote Desktop Connection to login (which you can find searching "remote" in the Start menu).
+
+
+We only need the Private IP Address for the Domain Controller, not to log in, but to help the Client VM ping the DCVM.
+
+Utilizing the credentials you have for each VM, remotely log in to each VM.
+
+With PC, use Remote Desktop Connection to log in (which you can find by searching "remote" in the Start menu).
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/b5d3c89c-669d-4fce-8813-6afb8bcc5fff)
+
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/e3fe0245-7dd6-4637-8b2b-2c128a26060b)
+
+
 
 
 
@@ -178,7 +194,7 @@ With PC, use Remote Desktop Connection to login (which you can find searching "r
 
 
 
-Now that we have deployed the Windows 10 **virtual machine**, lets move on to deploy the Windows Server 2022 **virtual machine**. To do so, lets select Create another **VM**. Repeat the initial deployment steps as for the previously deployed **virtual machine** until you reach the screen under the Basics tab. We will name this **VM** "VM2".
+Now that we have deployed the Windows 10 **virtual machine**, let's move on to deploy the Windows Server 2022 **virtual machine**. To do so, let's select Create another **VM**. Repeat the initial deployment steps as for the previously deployed **virtual machine** until you reach the screen under the Basics tab. We will name this **VM** "VM2".
   
 - - - -
 
