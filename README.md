@@ -138,7 +138,7 @@ We need to adjust the Private IP Address setting on the DCVM.
 
 From the Azure homepage, search "virtual machines", find the domain controller VM from the results of the search, and left-click the DCVM.
 
-From the DCVM screen, on the left side, you will notice many selections to choose from. Select Networking.
+From the Domain Controller VM screen, on the left side, you will notice many selections to choose from. Select Networking.
 
 Now, where it says Network Interface in the center of the screen, click on the blue number next to it to access the Network Interface screen.
 
@@ -158,11 +158,11 @@ Under Private IP Address settings, change the Allocation to Static, then select 
 
 We need to ensure there is connectivity between the Client VM and the Domain Controller VM.
 
-To start, let's acquire the necessary login credentials for each VM.
+To begin with, let's have on hand the login credentials for each VM.
 
-This includes the DCVM and Client VM's: Username, Password, Public IP Address, and DCVM's Private IP Address.
+This includes both the Domain Controller VM's and Client VM's: Username, Password, Public IP Address, and the Domain Controller's Private IP Address.
 
-To access the Public IP Address and the private IP Address, go to Microsoft Azure and access the Virtual Machine's Overview page (search virtual machine at the top, then open both VMs).
+To access the Public IP Address and the Private IP Address, go to Microsoft Azure and access the Virtual Machine's Overview page (search virtual machine at the top, then open both VMs).
 
 ![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/c05712cd-7386-4701-bee4-714de9620672)
 
@@ -170,17 +170,48 @@ To access the Public IP Address and the private IP Address, go to Microsoft Azur
 
 
 
-We only need the Private IP Address for the Domain Controller, not to log in, but to help the Client VM ping the DCVM.
+We only need to note the Private IP Address for the Domain Controller VM, not to use it as a remote log in, but to help the Client VM ping the Domain Controller VM via the command prompt app.
 
-Utilizing the credentials you have for each VM, remotely log in to each VM.
+With the desktop or laptop PC, use Remote Desktop Connection to log in (which you can find by searching "remote" in the Start menu).
 
-With PC, use Remote Desktop Connection to log in (which you can find by searching "remote" in the Start menu).
+Utilizing the credentials you saved when creating the VMs, log in to Client 1 VM.
 
 ![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/b5d3c89c-669d-4fce-8813-6afb8bcc5fff)
 
 
 ![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/e3fe0245-7dd6-4637-8b2b-2c128a26060b)
 
+- - - -
+From Client 1 VM, open the command prompt via the VM's Start Menu and enter the command ping -t and the Domain Controller VM's private IP address. N
+ote how there is no traffic between both VMs. 
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/2ed5a591-4d62-4519-ae7e-4fadf65f891a)
+
+Returning to your desktop or laptop PC, open Remote Desktop Connection to log in to the Domain Controller VM.
+
+From the Start Menu of the Domain Controller VM, search and open: Windows Defender Firewall with Advanced Security.
+
+>Left click Inbound Rules >> Within the Inbound Rules window, sort the Protocol column >>> Within the Protocol column, find ICMPv4 >>>> Hover the mouse cursor over the row that says Core Networking Diagnostics - ICMP Echo Request and Right Click the Mouse to open sub menu>>>>> Left click enable rule.
+
+Under the Enabled column, it should say Yes. Remember to enable rules for both rows.
+
+- - - -
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/51116ef7-74f6-4318-824a-ba2b4ec04309)
+
+
+- - - -
+
+Now return to the Client 1 VM and observe the traffic between this VM and the Domain Controller VM. We should have evidence of connectivity.
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/d4e425ac-efb9-4df6-912f-833d15f57769)
+
+- - - -
+
+
+
+
+
 
 
 
@@ -194,101 +225,3 @@ With PC, use Remote Desktop Connection to log in (which you can find by searchin
 
 
 
-Now that we have deployed the Windows 10 **virtual machine**, let's move on to deploy the Windows Server 2022 **virtual machine**. To do so, let's select Create another **VM**. Repeat the initial deployment steps as for the previously deployed **virtual machine** until you reach the screen under the Basics tab. We will name this **VM** "VM2".
-  
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Virtual%20Machine%208th.png?raw=true)
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Virtual%20Machine%209th.png?raw=true)
-
-- - - -
-
-For the last **VM** which we will call "VM3", we are deploying a Linux **virtual machine**. Repeat the initial deployment steps as for the previously deployed **virtual machine** until you reach the screen under the Basics tab.
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Virtual%20Machine%2010th.png?raw=true)
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Virtual%20Machine%2011th.png?raw=true)
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Virtual%20Machine%209th.png?raw=true)
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Virtual%20Machine%205th.png?raw=true)
-
-- - - -
-
-From the search bar at the top of the Azure webpage, search virtual machine. We have deployed three **virtual machines**.
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/search%20bar.png?raw=true)
-
-- - - -
-
-So all that's left for us to do now to wrap up this tutorial, is to remote in to one of these machines from our local PC desktop. Click on "VM2" from the **Virtual machines** screen to copy the Public IP Address of "VM2". 
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/Create%20Virtual%20Machine%2012th.png?raw=true)
-
-- - - -
-
-From the desktop, utilize the search bar of the Start Menu and find "Remote Desktop Connection".
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/remote%20in.png?raw=true)
-
-- - - -
-
-Enter "VM2" as the Username and the password you created for this machine (disregard the VM1 reference in the example pic below). It will take a few moments to boot like a desktop.
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/sign%20in%20to%20vm1.PNG?raw=true)
-
-- - - -
-
-</p>
-<br />
-
-![test](https://github.com/matthewpriddy/azure-vm-resource/blob/main/sign%20in%20to%20vm1%20part%202.PNG?raw=true)
