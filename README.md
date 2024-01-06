@@ -182,8 +182,9 @@ Utilizing the credentials you saved when creating the VMs, log in to Client 1 VM
 ![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/e3fe0245-7dd6-4637-8b2b-2c128a26060b)
 
 - - - -
-From Client 1 VM, open the command prompt via the VM's Start Menu and enter the command ping -t and the Domain Controller VM's private IP address. N
-ote how there is no traffic between both VMs. 
+From Client 1 VM, open the command prompt via the VM's Start Menu and enter the command ping -t and the Domain Controller VM's private IP address.
+
+Note how there is no traffic between both VMs. 
 
 ![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/2ed5a591-4d62-4519-ae7e-4fadf65f891a)
 
@@ -208,10 +209,63 @@ Now return to the Client 1 VM and observe the traffic between this VM and the Do
 
 - - - -
 
+It is now time to install Active Directory on the domain controller VM. 
+
+With Server Manager open, click on Add Roles and Features and click Next.
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/c0644c0d-d3ce-4c35-a459-5ceffe910900)
+
+- - - -
+
+Confirm the private IP address of the domain controller VM.
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/93f10ce1-7f9a-48c0-801f-03ef8c4ecafe)
+
+- - - -
+
+In the Server Roles tab, click on Active Directory Domain Services. Click Add Features, click Next, then Install.
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/ad4a1441-68cc-4eaf-ad31-c8830ce76105)
+
+- - - -
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/259f3dcb-cf12-40a9-9de8-7c931f7edf15)
+
+- - - -
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/667eb2b9-e6be-4f49-9cdf-91a12f20457b)
+
+- - - -
+
+Next, we have to promote the server into a domain controller. In Server Manager, there is a warning sign in the top right corner under a flag.
+
+This is a good time to save any work on your VM because at the end of this next step, the VM will probably automatically restart. Once that is done, proceed.
+
+Click on that flag and click Promote this server to a domain controller.
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/c7575b3d-7d17-4027-b19b-008477b69acd)
+
+- - - -
+
+Click on Add a new forest and specify a domain name. In my case, I will use mattpriddy.com.
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/c7b8d3de-5f82-474c-ba33-f8c8ebab35d4)
+
+- - - -
+
+Specify a password for the domain and click on Next on each screen and Install.
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/a1b52db7-9c0f-40e3-bc42-fc10b8b51b76)
 
 
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/a8743214-b2b0-40d4-9517-2195474f6532)
 
 
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/520d1613-3000-45d6-9d63-cd966d825fda)
+
+- - - -
+
+End of tutorial.
 
 
 
