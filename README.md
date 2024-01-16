@@ -265,9 +265,59 @@ Specify a password for the domain and click on Next on each screen and Install.
 
 - - - -
 
-End of tutorial.
+End of phase 3.
 
+- - - -
 
+Beginning of Phase 4
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/05391d72-1cde-44a5-9bcd-0b13d85460ca)
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/7893ca98-2a6b-4e4f-983b-dec63ce12d70)
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/eecf12bb-8489-44bd-a98c-38ad37a371e8)
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/7b4de240-d51c-4d39-b7c8-fc7efeb4fc90)
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/5b71fbc9-aa89-4e7a-ae41-f91f92d600dc)
+
+https://imgur.com/rOGJFhL
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/f4708924-ef83-47f5-8c67-2ff8bb62c051)
+
+- - - -
+
+Beginning of Phase 5
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/e2707d63-1a0b-4a2f-b6b8-7996f0076bcf)
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/fbdd7b45-f67e-4a80-a921-560739a71674)
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/e73daed4-8bc6-4548-96c6-76aacc5cfbf0)
+
+video too long 
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/79607d69-9557-4a75-8646-36bf2d1ede77)
+
+- - - -
+
+Beginning phase 6
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/9ea498f0-6af6-4970-b9a3-b468526b85dc)
+
+https://imgur.com/3Pes7ij
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/7c622c5a-7e49-440b-86b2-c0f7fadadf5f)
+
+- - - -
+
+beginnging of phase 6
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/6eff0b2a-43cb-4090-a09b-1544abdfef46)
+
+https://imgur.com/8RmMcdL
+
+![image](https://github.com/matthewpriddy/Active-Directory-Deployed-in-the-Cloud/assets/132313534/4e47ae1d-1364-486f-84ab-41a93499cfef)
 
 
 
